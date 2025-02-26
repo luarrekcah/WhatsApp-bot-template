@@ -39,7 +39,6 @@ export const initWASocket = async (): Promise<void> => {
         break;
       case "open":
         logger.info("Bot Conectado");
-        // Remover o bot/deletar dados se necessário
         break;
     }
 
