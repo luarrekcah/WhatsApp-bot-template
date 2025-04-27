@@ -50,7 +50,7 @@ export const initWASocket = async (): Promise<void> => {
   if (CONNECTION_TYPE === "NUMBER" && !sock.authState.creds.registered) {
     try {
       const code = await sock.requestPairingCode(PHONE_NUMBER);
-      console.log(`Código de Pareamento: ${code}`);
+      logger.info(`Código de Pareamento: ${code}`);
     } catch (error) {
       logger.error("Erro ao obter o código.");
     }
