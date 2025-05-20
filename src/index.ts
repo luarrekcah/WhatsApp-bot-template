@@ -25,6 +25,9 @@ export const initWASocket = async (): Promise<void> => {
 
   const { version, isLatest } = await fetchLatestWaWebVersion({});
 
+  console.log("Node version:", process.version);
+  console.log("Crypto in globalThis?", typeof globalThis.crypto);
+
   if (USE_LASTEST_VERSION) {
     logger.info(
       `Versão atual do WaWeb: ${version.join(".")} | ${
@@ -71,9 +74,9 @@ export const initWASocket = async (): Promise<void> => {
             (lastDisconnect.error as Boom)?.output?.statusCode !==
             DisconnectReason.loggedOut;
 
-            if (shouldReconnect) {
-              setTimeout(() => initWASocket(), 5000);  // Atraso de 5 segundos antes de reconectar
-            }
+          if (shouldReconnect) {
+            setTimeout(() => initWASocket(), 5000); // Atraso de 5 segundos antes de reconectar
+          }
           break;
         case "open":
           logger.info("Bot Conectado");
