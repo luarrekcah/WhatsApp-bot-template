@@ -20,6 +20,10 @@ const CONNECTION_TYPE = "QR"; // "NUMBER" (se quiser usar o número para login)
 const PHONE_NUMBER = "556892000000"; // +55 (68) 9200-0000 -> 556892000000 (formato para número)
 const USE_LASTEST_VERSION = true;
 
+if (typeof globalThis.crypto === 'undefined') {
+  globalThis.crypto = require('crypto');
+}
+
 export const initWASocket = async (): Promise<void> => {
   const { state, saveCreds } = await useMultiFileAuthState("auth");
 
