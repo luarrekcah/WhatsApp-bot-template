@@ -23,7 +23,7 @@
   "dependencies": {
     "@hapi/boom": "^10.0.1",
     "@types/qrcode-terminal": "^0.12.2",
-    "baileys": "^6.7.16",
+    "baileys": "^7.0.0-rc.9",
     "cross-env": "^7.0.3",
     "pino": "^9.6.0",
     "pino-pretty": "^13.0.0",
